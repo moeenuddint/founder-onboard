@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  api:
+    build: ../apps/api
+    ports:
+      - "3001:3001"
+    environment:
+      - DATABASE_URL=file:./dev.db
+    volumes:
+      - ../apps/api/prisma/dev.db:/app/dev.db
+      - ../apps/api/uploads:/app/uploads
+
+  front:
+    build: ../apps/front
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
