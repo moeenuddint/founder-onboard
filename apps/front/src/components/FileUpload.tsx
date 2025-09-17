@@ -63,15 +63,15 @@ export default function FileUpload({ onUploadSuccess }: FileUploadProps) {
       return;
     }
 
-    debugger
-    const newFile = new File([file], `${localStorage.getItem("userId")}_${file.name}`, {
-      type: file.type,
-      lastModified: file.lastModified
-    });
+    // debugger
+    // const newFile = new File([file], `${localStorage.getItem("userId")}_${file.name}`, {
+    //   type: file.type,
+    //   lastModified: file.lastModified
+    // });
 
     setIsUploading(true);
     try {
-      await apiClient.uploadFile(newFile);
+      await apiClient.uploadFile(file);
       toast.success("File uploaded successfully!");
       onUploadSuccess?.();
     } catch (error) {

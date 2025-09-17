@@ -75,13 +75,13 @@ export default function Dashboard() {
       ]);
       debugger
 
-      const newDocs = docsData?.filter((e) => {
-        return e?.name?.split("_")?.[0] === localStorage.getItem("userId");
-      });
+      // const newDocs = docsData?.filter((e) => {
+      //   return e?.name?.split("_")?.[0] === localStorage.getItem("userId");
+      // });
 
       setCompany(companyData);
       setScore(scoreData);
-      setDocuments(newDocs);
+      setDocuments(docsData);
       setNotifications(notifsData);
     } catch (error) {
       toast.error("Failed to load dashboard data");
