@@ -136,34 +136,6 @@ export default async function filesRoutes(fastify: FastifyInstance) {
     // Return mock documents if none exist
     if (documents.length === 0) {
       documents = [
-        {
-          id: "mock-doc-1",
-          companyId: "mock-company-1",
-          name: "pitch_deck.pdf",
-          mimeType: "application/pdf",
-          size: 2457600, // 2.4MB
-          path: "/mock/path/pitch_deck.pdf",
-          createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000), // 5 days ago
-        },
-        {
-          id: "mock-doc-2",
-          companyId: "mock-company-1",
-          name: "financials.xlsx",
-          mimeType:
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-          size: 512000, // 512KB
-          path: "/mock/path/financials.xlsx",
-          createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000), // 3 days ago
-        },
-        {
-          id: "mock-doc-3",
-          companyId: "mock-company-1",
-          name: "business_plan.pdf",
-          mimeType: "application/pdf",
-          size: 1843200, // 1.8MB
-          path: "/mock/path/business_plan.pdf",
-          createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000), // 1 day ago
-        },
       ];
     }
 

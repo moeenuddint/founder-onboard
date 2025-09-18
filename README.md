@@ -14,15 +14,14 @@ A full-stack application for founders to onboard their companies, upload documen
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
+- npm install
 
 ### Installation
 
 1. Clone the repo
-2. Install dependencies for both frontend and backend:
+2. Install dependencies for both frontend and backend: npm i
    ```bash
-   cd apps/front && npm install
-   cd ../api && npm install
+   npm run dev for concurrently both backend and frontend
    ```
 
 ### Environment Setup
@@ -40,6 +39,7 @@ A full-stack application for founders to onboard their companies, upload documen
 cd apps/api
 npm run db:migrate
 npm run db:generate
+npx prisma migrate dev
 ```
 
 ### Running the Application
@@ -78,20 +78,6 @@ npm run db:generate
 - `GET /api/score` - Get investability score
 - `GET /api/notifications` - Get notifications
 
-## Project Structure
-
-```
-apps/
-├── api/          # Backend (Fastify)
-│   ├── src/
-│   ├── prisma/
-│   └── package.json
-└── front/        # Frontend (Next.js)
-    ├── src/
-    │   ├── app/
-    │   └── components/
-    └── package.json
-```
 
 ## Development
 
@@ -101,15 +87,11 @@ apps/
 
 ## Deployment
 
-The application is ready for deployment:
-
-- Frontend: Deploy to Vercel
-- Backend: Deploy to Railway/Fly.io
-- Database: SQLite for demo, PostgreSQL for production
+- Database: SQLite for demo
 
 ## Environment Variables
 
-Create `.env` files in `apps/api` and `apps/front` if needed.
+Create `.env.local` file in `apps/front`.
 
 ## API Endpoints
 
@@ -126,23 +108,11 @@ Create `.env` files in `apps/api` and `apps/front` if needed.
 ```bash
 npm run test
 ```
-
-## Deployment
-
-- Backend: Deploy to Render/Fly
-- Frontend: Deploy to Vercel
-
-## Decisions & Tradeoffs
-
-- Used SQLite for simplicity in testing; in production, use PostgreSQL.
-- Mocked KYC and financials linking as per requirements.
-- Basic auth simulation with hardcoded user ID.
-- File uploads stored locally; in production, use cloud storage.
-- No real-time chat implemented due to time constraints.
-
 ## Loom Demo
-
-[Link to Loom video]
+Video 1
+[\[Link to Loom video\]](https://www.loom.com/share/61e05b2384c44f3f88a71f30d722f29b?sid=5aad7d58-2ff3-4ea8-a357-541e962384f3)
+Video 2
+https://www.loom.com/share/0cd832ec5b744d768e7fb4b94c3d780f
 
 ## Time Spent
 

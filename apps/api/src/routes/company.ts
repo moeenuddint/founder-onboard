@@ -40,19 +40,8 @@ export default async function companyRoutes(fastify: FastifyInstance) {
       where: { userId },
     });
 
-    // Return mock data if no company exists
     if (!company) {
-      company = {
-        id: "mock-company-1",
-        userId,
-        name: "TechStart Inc.",
-        sector: "SaaS",
-        targetRaise: 2500000,
-        revenue: 500000,
-        kycVerified: true,
-        financialsLinked: true,
-        createdAt: new Date(),
-      };
+      return null;
     }
 
     reply.send(company);
