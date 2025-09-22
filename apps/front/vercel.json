@@ -2,14 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "apps/front/package.json",
+      "src": "apps/front/next.config.js",
       "use": "@vercel/next"
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "apps/front/$1"
-    }
+    { "src": "/(.*)", "dest": "apps/front/$1" }
   ]
 }
