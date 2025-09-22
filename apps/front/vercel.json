@@ -1,9 +1,14 @@
 {
+  "version": 2,
   "builds": [
-    {
-      "src": "apps/front/package.json",
-      "use": "@vercel/next"
-    }
+    { "src": "apps/front/package.json", "use": "@vercel/next" }
   ],
-  "routes": []
+  "installCommand": "cd apps/front && npm install",
+  "buildCommand": "cd apps/front && npm run build",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://my-backend.onrender.com/api/$1"
+    }
+  ]
 }
