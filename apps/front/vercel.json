@@ -1,9 +1,15 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "apps/front/package.json",
       "use": "@vercel/next"
     }
   ],
-  "routes": []
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "apps/front/$1"
+    }
+  ]
 }
