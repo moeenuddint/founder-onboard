@@ -4,13 +4,13 @@
     "module": "commonjs",
     "lib": ["ES2022"],
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./src",              // keep source-only root
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", "test/company.test.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*"],           // 👈 remove test path
+  "exclude": ["node_modules", "dist", "test"]
 }
